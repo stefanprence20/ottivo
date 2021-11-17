@@ -145,11 +145,11 @@ class Employee
             $contractStartDateDay = $contractStartDate->format('d');
             switch ($contractStartDateDay) {
                 case "01":
-                    $months = 13 - (int)$contractStartDate->format('m');
+                    $months = 13 - (int)$contractStartDate->format('m'); // If start from date 01 it will get full month vacation days
                     $this->vacationDays = (int)round($months * $this->vacationDays / 12);
                     break;
                 case "15":
-                    $months = 12 - (int)$contractStartDate->format('m');
+                    $months = 12 - (int)$contractStartDate->format('m'); // If start from date 15 it will not get any vacation
                     $this->vacationDays = (int)round($months * $this->vacationDays / 12);
                     break;
             }

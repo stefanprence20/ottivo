@@ -14,7 +14,7 @@ try {
     $cli = new Cli();
     $cli->description('Outputs the employees names with the respective number of vacation days by year.')
         ->opt('year', 'Specify year for employee vacations.', true, 'integer')
-        ->opt('filename', 'Set custom csv file to do calculations.');
+        ->opt('filename', 'Set custom csv file to do calculations.', true);
 
     // Parse and return cli args.
     $args = $cli->parse($argv, true);

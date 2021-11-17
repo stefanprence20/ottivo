@@ -14,6 +14,7 @@ class CSV
     const DEFAULT_FILENAME = 'employeeList.csv';
 
     /**
+     * Get records from csv file
      * @param string $csvFilename
      * @return Iterator
      * @throws Exception
@@ -25,7 +26,7 @@ class CSV
         if (!is_resource($resource)) {
             throw new Exception('This file does not exists.', 404);
         }
-        //load the CSV document from a file path
+        // Load the CSV document from a file path
         $csv = Reader::createFromPath( self::STORAGE_PATH . $csvFilename, 'r');
         $csv->setHeaderOffset(0);
         if ($csv->count() === 0) {

@@ -13,6 +13,7 @@ class EmployeesService
     protected Iterator $records;
 
     /**
+     * EmployeeService Constructor
      * @param string $csvFilename
      * @throws Exception
      */
@@ -22,6 +23,7 @@ class EmployeesService
     }
 
     /**
+     * Outputs the employees names with the respective number of vacation days.
      * @param int $specifiedYear
      * @throws Exception
      */
@@ -34,7 +36,7 @@ class EmployeesService
                 $employee->checkIfSpecialContract();
                 $employee->checkIfOlderThan30Years();
                 $employee->checkSpecifiedYearEqualToContractYear();
-                echo $employee->getName() . " has " . $employee->getVacationDays() . " vacation days.\n";
+                echo $employee->getName() . " has " . $employee->getVacationDays() . " vacation days." . PHP_EOL;
             } catch (Exception $ex) {
                 if ($ex->getCode() === 512) {
                     Log::warning($ex->getMessage(), $ex->getCode(), $ex->getTrace());

@@ -23,7 +23,7 @@ class EmployeeController
     }
 
     /**
-     * Outputs the employees names with the respective number of vacation days.
+     * Calculate vacation days for each employee
      */
     public function calculateVacationDays()
     {
